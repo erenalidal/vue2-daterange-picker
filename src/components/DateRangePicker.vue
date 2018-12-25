@@ -106,7 +106,9 @@
         }
       },
       presetId: {
-        validator: prop => typeof prop === 'number' || prop === null
+        default(){
+          return null;
+        }
       },
       ranges: {
         type: Object,
