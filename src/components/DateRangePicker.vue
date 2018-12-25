@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative; display: inline-block;">
+  <div style="position: relative; display: inline-block; width: 100%">
     <div class="form-control" @click="togglePicker">
       <slot
         name="input"
