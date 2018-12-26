@@ -19,7 +19,7 @@
         v-if="open"
         v-on-clickaway="clickAway">
         <div class="calendars">
-          <calendar-ranges @clickRange="clickRange" :ranges="ranges"></calendar-ranges>
+          <calendar-ranges @clickRange="clickRange" :ranges="ranges" :preset="preset"></calendar-ranges>
           <div class="drp-calendar left">
             <div class="daterangepicker_input hidden-xs" v-if="false">
               <input class="input-mini form-control" type="text" name="daterangepicker_start"
@@ -115,7 +115,7 @@
         default() {
           return {
             'Yesterday': [moment().add(-1, 'day').startOf('day'), moment().add(-1, 'day').endOf('day'), 1],
-            'Today': [moment().startOf('day'), moment().endOf('day'), 'today', 2],
+            'Today': [moment().startOf('day'), moment().endOf('day'), 2],
             'Tomorrow': [moment().add(1, 'day').startOf('day'), moment().add(1, 'day').endOf('day'), 3],
 
             'Last week': [moment().add(-1, 'week').startOf('week'), moment().add(-1, 'week').endOf('week'), 4],
@@ -251,7 +251,10 @@
       },
       endDate(value) {
         this.end = new Date(value)
-      }
+      },
+      presetId(value) {
+        this.preset = value
+      },
     }
   }
 
